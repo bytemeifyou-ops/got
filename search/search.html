@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Web</title>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="user-scalable=false, initial-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+    <script async src="https://cse.google.com/cse.js?cx=b183f18cdd3bd4142">
+    </script>
+    <div class="gcse-search"></div>
+</body>
+<script>
+    const d = new Date();
+    d.setTime(d.getTime() + (1*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    const url = new URL(location.href);
+    const uid = url.searchParams.get("uid");
+    document.cookie = 'uid=' + uid + '; Secure; SameSite=None;'+ expires +";"; 
+    console.log('Cookies Set', document.cookie);
+</script>
+</html>
